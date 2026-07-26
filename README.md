@@ -10,3 +10,5 @@ Aplicación de escritorio para detectar texto en pantalla en tiempo real y tradu
 - MSS
 - PaddleOCR (temporalmente)
 - SQLite
+
+## Project Architecture
