@@ -4,7 +4,7 @@ import time
 
 @dataclass
 class MouseState:
-
+    """Represents the state of the mouse cursor at a specific point in time."""
     x: int
     y: int
 

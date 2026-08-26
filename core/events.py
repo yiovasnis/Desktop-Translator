@@ -2,6 +2,8 @@ from enum import Enum, auto
 
 
 class MouseEvent(Enum):
+    """Enum for mouse events."""
+    
     NONE = auto()
 
     # Movimiento

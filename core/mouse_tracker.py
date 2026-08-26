@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 import time
-import win32api
+import win32api #currently depends on the Windows API through pywin32.
 from core.mouse_state import MouseState
 
 class MouseTracker:
-
+    """Track the Windows cursor position and movement state."""
     def __init__(self):
 
         x, y = win32api.GetCursorPos()
@@ -21,7 +21,7 @@ class MouseTracker:
         )
 
     def update(self):
-
+        """Update the mouse state with the current cursor position and movement information."""
         new_x, new_y = win32api.GetCursorPos()
 
         last_x = self.state.x
@@ -46,5 +46,5 @@ class MouseTracker:
         return self.state
 
     def get_state(self):
-
+        """Return the lastest tracked mouse state."""
         return self.state

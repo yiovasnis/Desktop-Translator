@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from core.word_event_data import WordEventData
 
 class WordIndex:
-
+    """A class to manage a collection of words and track the current word under the cursor."""
     def __init__(self):
 
         self.words = []
@@ -15,6 +15,7 @@ class WordIndex:
         self.previous_word = None
 
     def clear(self):
+        """Clear the word index and reset the current and previous word references."""
 
         self.words.clear()
         
@@ -23,14 +24,17 @@ class WordIndex:
         self.previous_word = None
 
     def add_word(self, word: Word):
+        """Add a single word to the word index."""
 
         self.words.append(word)
 
     def add_words(self, words):
+        """Add multiple words to the word index."""
 
         self.words.extend(words)
 
     def find_word(self, x, y):
+        """Find and return the word at the given (x, y) coordinates, or None if no word is found."""
 
         for word in self.words:
 
@@ -49,6 +53,7 @@ class WordIndex:
         return None
     
     def update(self, x, y):
+        """Update the current word based on the given (x, y) coordinates and return a SystemEvent if a word event occurred."""
 
         self.previous_word = self.current_word
         self.current_word = self.find_word(x, y)

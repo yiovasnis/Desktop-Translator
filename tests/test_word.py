@@ -1,5 +1,11 @@
-from core.Word import Word
-from core.Word_index import WordIndex
+import sys
+from pathlib import Path
+
+# Agrega la carpeta raíz al path de Python
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+from core.word import Word
+from core.word_index import WordIndex
 
 index = WordIndex()
 
